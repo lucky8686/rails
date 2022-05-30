@@ -1,0 +1,19 @@
+
+default: &default
+  adapter: postgresql
+  pool: 5
+  username: postgres
+  password: superuser
+  host: localhost
+  timeout: 5432
+
+development:
+  <<: *default
+  database: online_book_store_development
+test:
+  <<: *default
+  database: online_book_store_test
+
+production:
+  <<: *default
+  database: online_book_store_production
